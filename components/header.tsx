@@ -1,27 +1,18 @@
 'use client'
 import Image from "next/image";
-import { Variants, motion,useMotionValue,useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { links } from "@/lib/data";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+type SectionName = (typeof links)[number]['name']
+
 
 export default function Header() {
-    const [headerActiveColor,setHeaderActiveColor] = useState(false)
-    const backgroundVariants : Variants = {
-        active: {background:'#fff'},
-        disabled:{background:'#ff22'}
-    }
-    useEffect(()=>{
-        const handleScroll = ()=>window.scrollY > 0 ? setHeaderActiveColor(true) : setHeaderActiveColor(false)
-        window.addEventListener('scroll',handleScroll);
-        return ()=>{
-            window.removeEventListener('scroll',handleScroll)
-        }
-    },[])
+    const [activeSection,setActiveSection] = useState<SectionName>('O nas')
   return (
     <motion.header 
-    className={`sticky w-full z-[999] top-0 flex items-center justify-center  transition-colors ${headerActiveColor ? 'bg-white bg-opacity-[0.4]' : 'bg-opacity-[0.03]'}`}
-    variants={backgroundVariants}
+    className={`sticky w-full z-[999] top-0 flex items-center justify-center shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] transition-colors bg-white bg-opacity-80 dark:bg-gray-800 dark:border-black/40 `}
     initial={{
         y:-100,
         opacity:0,
@@ -49,12 +40,24 @@ export default function Header() {
                 <Image width={70} quality={95} height={70} src='/Logo.png' alt="Logo"/>
             </motion.div>
             <ul className="ml-auto flex gap-10 font-semibold">
-                {/* taka kropka co zmienia lokalizację */}
                 {links.map(({name,hash})=>(
                 <li key={name}>
-                    <Link className={`text-lg tracking-wider ${headerActiveColor ? 'text-gray-700' : 'text-gray-300'}`} href={hash}>
+                    <Link 
+                    className={`text-lg tracking-wider text-gray-600 dark:text-gray-400 hover:text-gray-950 dark:hover:text-gray-300`} 
+                    href={hash}
+                    onClick={()=>setActiveSection(name)}>
                         {name}
                     </Link>
+                    {activeSection === name &&(
+                        <motion.span
+                        initial={{
+                            width:0
+                        }}
+                        animate={{
+                            width:'100%'
+                        }}
+                        className="block bg-gray-500 h-1"></motion.span>
+                    )}
                 </li>
                 ))}
             </ul>
