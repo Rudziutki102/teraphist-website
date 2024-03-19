@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { links } from "@/lib/data";
 import { useState } from "react";
+import BurgerMenu from "./burger-menu";
 
 type SectionName = (typeof links)[number]['name']
 
@@ -12,7 +13,7 @@ export default function Header() {
     const [activeSection,setActiveSection] = useState<SectionName>('O nas')
   return (
     <motion.header 
-    className={`sticky w-full z-[999] top-0 flex items-center justify-center shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] transition-colors bg-white bg-opacity-80 dark:bg-gray-800 dark:border-black/40 `}
+    className={`sticky w-full z-[999] top-0 flex items-center sm:justify-center sm:shadow-lg sm:shadow-black/[0.03] sm:backdrop-blur-[0.5rem] transition-colors sm:bg-white bg-opacity-80 sm:dark:bg-gray-800 sm:dark:border-black/40 bg-transparent`}
     initial={{
         y:-100,
         opacity:0,
@@ -22,8 +23,9 @@ export default function Header() {
         opacity: 1,
     }}
     >
-        <nav className="w-2/3 flex w-50 py-2 items-center gap-10 uppercase">
+        <nav className="hidden sm:w-2/3 sm:flex w-50 py-2 items-center gap-10 uppercase">
             <motion.div
+            className="hidden sm:block"
             initial={{
                 opacity:0,
                 scale: 0
@@ -62,6 +64,7 @@ export default function Header() {
                 ))}
             </ul>
         </nav>
+        <BurgerMenu/>
     </motion.header>
   )
 }
