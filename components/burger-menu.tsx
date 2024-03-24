@@ -1,78 +1,85 @@
+'use client'
 import React,{useState} from 'react'
-import {motion} from 'framer-motion';
+import { motion} from 'framer-motion';
+import { links } from '@/lib/data';
+import Link from 'next/link';
+import {menuTopLineVariant, menuBottomLineVariant,menuMidLineVariant,menuAnimationVariant} from '@/lib/variants'
 
-const BurgerMenu = () => {
-    const [isSidebarVisible,setIsSidebarVisible] = useState(false)
+const BurgerMenu : React.FunctionComponent= () => {
+  const [isSidebarVisible,setIsSidebarVisible] = useState<boolean>(false)
   return (
-    <div onClick={()=>setIsSidebarVisible(!isSidebarVisible)}>
-    {isSidebarVisible ? 
-        (
-            <motion.svg
-            width="25"
-            height="25"
-            viewBox="25 25"
-            className='sm:hidden relative left-2 top-2'
-            >
-            <motion.line
-                x1="0"
-                y1="0"
-                x2="25"
-                y2="25"
-                stroke="#00cc88"
-                strokeWidth='5'
-                custom={2}
-              />
-            <motion.line
-                x1="25"
-                y1="0"
-                x2="0"
-                y2="25"
-                strokeWidth='5'
-                stroke="#00cc88"
-                custom={2}
-              />
-            </motion.svg>
-        ):
-        (
-            <motion.svg
-            width="25"
-            height="25"
-            viewBox="25 25"
-            className='sm:hidden relative left-2 top-2'
-            >
-            <motion.line
-                x1="0"
-                y1="1.5"
-                x2="25"
-                y2="1.5"
-                stroke="#00cc88"
-                strokeWidth='3'
-                custom={2}
-            />
-            <motion.line
-                x1="0"
-                y1="12.5"
-                x2="25"
-                y2="12.5"
-                stroke="#00cc88"
-                strokeWidth='3'
-                custom={2}
-              />
-            <motion.line
-                x1="0"
-                y1="23.5"
-                x2="25"
-                y2="23.5"
-                strokeWidth='3'
-                stroke="#00cc88"
-                custom={2}
-              />
-            </motion.svg>
-        )
-}
-    </div>
-    
+      <>
+        <div className='border rounded-lg shadow-lg p-2 fixed right-4 top-4 sm:hidden' onClick={()=>setIsSidebarVisible(!isSidebarVisible)}>
+        <motion.svg
+        width="25"
+        height="25"
+        viewBox="0 0 25 25"
+        className={`sm:hidden`}
+        animate={isSidebarVisible ? "open" : 'closed'}
+        initial="hidden"
+        >
+        <motion.line
+            x1="0"
+            y1="3"
+            x2="25"
+            y2="3"
+            className='stroke-gray-950 dark:stroke-gray-200'
+            strokeWidth='3'
+            custom={2}
+            variants={menuTopLineVariant}
+          />
+        <motion.line
+            x1="0"
+            y1="13.5"
+            x2="25"
+            y2="13.5"
+            strokeWidth='3'
+            className='stroke-gray-950 dark:stroke-gray-200'
+            custom={2}
+            variants={menuMidLineVariant}
+          />
+        <motion.line
+            x1="0"
+            x2="25"
+            y1="23"
+            y2="23"
+            strokeWidth='3'
+            className='stroke-gray-950 dark:stroke-gray-200'
+            custom={2}
+            variants={menuBottomLineVariant}
+          />
+        </motion.svg>
+      </div>
 
+      {isSidebarVisible && (
+        <motion.div
+        className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:hidden' 
+        transition={{
+          delay:0.35,
+          duration:0.7,
+        }}>
+        <motion.ul 
+        variants={menuAnimationVariant}
+        >
+        {links.map(({name,hash},index)=>(
+                <motion.li
+                  variants={menuAnimationVariant}
+                  key={name}
+                  initial="initial"
+                  animate="animate"
+                  custom={index}
+                >
+                    <Link 
+                    className='font-semibold py-7 uppercase text-lg tracking-wider text-gray-600 dark:text-gray-200' 
+                    href={hash}>
+                        {name}
+                    </Link>
+                </motion.li>
+                ))}
+        </motion.ul>
+      </motion.div>
+      )}
+    </>
   )
 }
 
