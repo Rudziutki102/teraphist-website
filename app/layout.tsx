@@ -7,8 +7,8 @@ import ThemeSwitch from "@/components/theme-switch";
 
 const dosis = Dosis({subsets:['latin-ext']})
 export const metadata: Metadata = {
-  title: "Fizjo",
-  description: "Fizjo",
+  title: "Manualne Centrum Terapii Ciała",
+  description: "Manualne Centrum Terapii Ciała",
 };
 
 export default function RootLayout({

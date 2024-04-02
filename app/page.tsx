@@ -1,7 +1,12 @@
-import Image from "next/image";
+import AboutUs from "@/components/about-us";
+import Slider from "@/components/slider";
+
 
 export default function Home() {
   return (
-   <div>Test</div>
+    <>
+    <Slider/>
+    <AboutUs/>
+    </>
   );
 }
