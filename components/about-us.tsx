@@ -2,7 +2,6 @@
 import React from 'react'
 import SectionHeader from './section-header'
 import {motion} from 'framer-motion'
-import { aboutUs } from '@/lib/data'
 import Image from 'next/image'
 
 const AboutUs = () => {

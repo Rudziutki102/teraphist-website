@@ -59,12 +59,11 @@ const BurgerMenu : React.FunctionComponent= () => {
           duration:0.7,
         }}>
         <motion.ul 
-        variants={menuAnimationVariant}
         >
         {links.map(({name,hash},index)=>(
                 <motion.li
-                  variants={menuAnimationVariant}
                   key={name}
+                  variants={menuAnimationVariant}
                   initial="initial"
                   animate="animate"
                   custom={index}
