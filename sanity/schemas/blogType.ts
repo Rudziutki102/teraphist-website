@@ -6,7 +6,17 @@ export const blogItem = defineType({
     name:'post',
     title:'Post',
     type:'document',
+    liveEdit: false,
     fields:[
+        {
+          name:"slug",
+          type:'slug',
+          title:'slug',
+          validation:rule=>rule.required(),
+          options:{
+            source:'title',
+          }
+        },
         {
             name:'titleImage',
             type:'image',

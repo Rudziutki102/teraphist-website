@@ -2,6 +2,7 @@ import React from 'react'
 import {client} from '@/sanity/lib/client'
 
 import SliderComponent from './sliderComponent'
+import { SliderImageProps } from '@/lib/types'
 
 async function getSliderImages(){
   const query : string = `*[_type == 'slider_image']{
@@ -13,7 +14,7 @@ async function getSliderImages(){
   return data
 }
 const Slider = async () => {
-  const images = await getSliderImages();
+  const images : SliderImageProps[] = await getSliderImages();
   return (
     <>
       {images && <SliderComponent imagesGallery={images} />}

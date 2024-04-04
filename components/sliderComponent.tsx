@@ -2,21 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { urlForImage } from '@/sanity/lib/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import {SliderComponentProps} from '@/lib/types'
 
-  type GalleryItemProps =  {
-    _id: string;
-    title: string;
-    titleImage: {
-      _type: string;
-      asset: {
-        _ref: string;
-        _type: string;
-      }
-    };
-  }
-  type SliderComponentProps = {
-    imagesGallery: GalleryItemProps[];
-  }
 const Slidercomponent : React.FC<SliderComponentProps> = ({ imagesGallery }) => {
   const [slide, setSlide] = useState(0);
 
@@ -33,7 +20,7 @@ const Slidercomponent : React.FC<SliderComponentProps> = ({ imagesGallery }) => 
     return()=>clearInterval(interval)
   }, []);
   return (
-    <motion.div className='mt-4 sm:mt-0 relative w-full sm:w-2/3 pt-[56.6%] sm:pt-[16.9%] mx-auto'
+    <motion.div className='mt-4 sm:mt-0 relative w-full pt-[56.6%] sm:pt-[16.9%]'
     initial={{opacity:0}}
     animate={{opacity:1}}
     transition={{
