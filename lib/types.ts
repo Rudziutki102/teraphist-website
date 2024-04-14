@@ -19,6 +19,7 @@ export type SanityImageProps ={
 
 }
 export type BlogListProps = {
+    _id:string
     slug:{
         current:string,
         _type:string
@@ -26,9 +27,10 @@ export type BlogListProps = {
     title:string,
     tags:SantyTagProps[],
     publishedAt:string
-    titleImag:SanityImageProps
+    titleImage?:SanityImageProps,
+    excerpt:string
 }
- type GalleryItemProps =  {
+ export type GalleryItemProps =  {
     _id: string;
     title: string;
     titleImage: {
@@ -38,7 +40,4 @@ export type BlogListProps = {
         _type: string;
       }
     };
-  }
-  export type SliderComponentProps = {
-    imagesGallery: GalleryItemProps[];
   }

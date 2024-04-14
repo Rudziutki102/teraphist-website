@@ -33,6 +33,11 @@ export const blogItem = defineType({
           type:'string',
           title:'Tytuł'
         },
+        {
+          name:'excerpt',
+          title:"Skrót",
+          type:"text"
+        },
         defineField({
             type:'array',
             name:"content",

@@ -8,9 +8,19 @@ import {skillsAnimationVariant} from '@/lib/variants'
 
 
 const SkillsSection = () => {
-    
   return (
-    <>
+    <motion.div
+    initial={{
+      y:200,
+      opacity:0
+  }}
+  animate={{
+      y:0,
+      opacity:1
+  }}
+  transition={{
+      delay:.5
+  }}>
     <SectionHeader name='Usługi'/>
     <div className='flex justify-center flex-wrap'>
         {skills.map((skill,index)=>(
@@ -27,7 +37,7 @@ const SkillsSection = () => {
             >{skill}</motion.div>
         ))}
     </div>
-    </>
+    </motion.div>
   )
 }
 

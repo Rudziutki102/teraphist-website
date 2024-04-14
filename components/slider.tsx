@@ -13,6 +13,7 @@ async function getSliderImages(){
   const data = await client.fetch(query)
   return data
 }
+export const revalidate = 60
 const Slider = async () => {
   const images : SliderImageProps[] = await getSliderImages();
   return (

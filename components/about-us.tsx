@@ -21,8 +21,8 @@ const AboutUs = () => {
         <SectionHeader name='O Nas' />
             <div className='sm:flex'>
                 <div className='relative basis-2/5'>
-                    <div className='absolute w-full top-0 -left-[10%] h-2/4 bg-[#9da2ca] z-0 '></div>
-                    <div className='absolute w-full top-[10%] left-[10%] h-2/4 bg-[#9da2ca] z-0 opacity-60 '></div>
+                    <div className='absolute size-80 -top-[10%] -left-[20%] sm:-top-[10%] sm:left-[20%] bg-[#9da2ca] z-0 '></div>
+                    <div className='absolute size-80 top-[10%] -left-[10%] sm:top-0 sm:left-[30%] bg-[#9da2ca] z-0 opacity-60 '></div>
                     <Image 
                     alt='hero' 
                     src='/hero.png' 
