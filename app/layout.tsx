@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <ThemeContextProvider>
       <html lang="en" className="!scroll-smooth">
-        <body className={`${dosis.className} dark:bg-gray-500 h-[1000px]`}>
+        <body className={`${dosis.className} dark:bg-gray-500`}>
           <Header/>
           {children}
           <ThemeSwitch/>

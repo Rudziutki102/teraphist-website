@@ -6,7 +6,7 @@ import Slider from "@/components/slider";
 
 export default function Home() {
   return (
-    <div className="w-2/3 mx-auto">
+    <div className="w-5/6 sm:w-2/3 mx-auto">
     <Slider/>
     <AboutUs/>
     <SkillsSection/>
