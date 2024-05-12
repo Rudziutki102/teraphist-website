@@ -1,16 +1,13 @@
-import AboutUs from "@/components/about-us";
-import BlogSection from "@/components/blog-section";
+import HeroSection from "@/components/hero";
+import ReviewList from "@/components/review-list";
 import SkillsSection from "@/components/skills-section";
-import Slider from "@/components/slider";
-
 
 export default function Home() {
   return (
-    <div className="w-5/6 sm:w-2/3 mx-auto">
-    <Slider/>
-    <AboutUs/>
-    <SkillsSection/>
-    <BlogSection/>
+    <div className="flex flex-wrap">
+      <HeroSection />
+      <SkillsSection />
+      <ReviewList />
     </div>
   );
 }
