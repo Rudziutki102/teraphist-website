@@ -25,8 +25,8 @@ const SkillsSection = () => {
                 {skill.name}
               </span>
               <div
-                className={`h-full delay-700 duration-500 transition-transform opacity-0 translate-x-full p-3 text-xl flex flex-col justify-around  ${
-                  selectedSkill === index && "opacity-100 translate-x-0"
+                className={`flex flex-col delay-700 duration-500 justify-around relative h-full transition-transform opacity-0 translate-x-full p-3 text-xl  ${
+                  selectedSkill === index && "opacity-100 !translate-x-0"
                 } `}
               >
                 <p>{skill.description}</p>
