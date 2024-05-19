@@ -11,14 +11,15 @@ const SkillsSection = () => {
         <div className="flex h-full w-full flex-col lg:flex-row lg:justify-center">
           {skills.map((skill, index) => (
             <div
-              className={`relative h-16 lg:h-96 lg:w-24 flex justify-center items-center bg-hero-section-bg bg-cover rounded-xl lg:mx-3 my-1 shadow-3xl transition-all duration-700 overflow-hidden hover:cursor-pointer ${
+              className={`relative h-16 lg:h-96 lg:w-24 flex justify-center items-center bg-cover rounded-xl lg:mx-3 my-1 transition-all duration-700 overflow-hidden hover:cursor-pointer bg-bottom-10p ${
                 selectedSkill == index && "!h-96 lg:!w-[600px]"
               }`}
+              style={{ backgroundImage: `url(${skill.imageUrl})` }}
               onClick={() => setSelectedSkill(index)}
               key={index}
             >
               <span
-                className={`absolute transition-transform uppercase whitespace-nowrap bottom-0 left-1/2 lg:-rotate-90 origin-left text-xl tracking-wider ${
+                className={`absolute transition-opacity uppercase whitespace-nowrap bottom-0 left-1/2 lg:-rotate-90 origin-left text-xl tracking-wider ${
                   selectedSkill == index && "opacity-0"
                 }`}
               >

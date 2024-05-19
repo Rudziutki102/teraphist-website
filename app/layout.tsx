@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth bg-black">
-      <body className={`${dosis.className} dark:bg-gray-500`}>
+    <html lang="en" className="!scroll-smooth">
+      <body className={`${dosis.className} bg-color-4/60`}>
         <Header />
         {children}
       </body>

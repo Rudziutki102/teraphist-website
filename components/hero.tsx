@@ -4,7 +4,7 @@ import Image from "next/image";
 import Tilt from "react-parallax-tilt";
 const HeroSection = () => {
   return (
-    <div id="hero" className="section relative pt-[11rem] -mt-[8rem]">
+    <div id="hero" className="relative pt-[11rem] -mt-[8rem]">
       <div
         className="
         flex
