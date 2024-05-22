@@ -28,3 +28,8 @@ export type GalleryItemProps = {
     };
   };
 };
+
+export interface BurgerMenuProps {
+  openNavigation: boolean;
+  onClick: () => void;
+}

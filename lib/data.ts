@@ -5,7 +5,7 @@ export const links = [
   },
   {
     name: "Cennik",
-    hash: "#about-us",
+    hash: "#pricing",
   },
   {
     name: "Opinie",
@@ -57,5 +57,73 @@ export const skills = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     imageUrl: "/klasyczny.jpg",
+  },
+] as const;
+
+export const pricingList = [
+  {
+    service: "Masaż",
+    services: [
+      {
+        name: "relaksacyjny",
+        prices: {
+          half: 70,
+          full: 120,
+        },
+      },
+      {
+        name: "klasyczny",
+        prices: {
+          half: 70,
+          full: 120,
+        },
+      },
+      {
+        name: "sportowy",
+        prices: {
+          half: 80,
+          full: 130,
+        },
+      },
+      {
+        name: "bańką chińska",
+        prices: {
+          half: 80,
+          full: 130,
+        },
+      },
+      {
+        name: "świecą",
+        prices: {
+          half: 120,
+          full: 160,
+        },
+      },
+      {
+        name: "drenaż limfatyczny",
+        prices: {
+          half: 80,
+          full: 130,
+        },
+      },
+      {
+        name: "gorącymi kamieniami",
+        prices: {
+          half: 130,
+          full: 170,
+        },
+      },
+    ],
+  },
+  {
+    service: "Inne",
+    services: [
+      {
+        name: "kinesiotaping",
+        prices: {
+          stable: 30,
+        },
+      },
+    ],
   },
 ] as const;

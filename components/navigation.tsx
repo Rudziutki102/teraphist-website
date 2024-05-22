@@ -1,45 +1,16 @@
-"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { links } from "@/lib/data";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 type SectionName = (typeof links)[number]["name"];
 const NavigationMenu = () => {
   const [activeSection, setActiveSection] = useState<SectionName>("Cennik");
   return (
-    <motion.nav
-      className="hidden sm:w-2/3 sm:flex w-50 py-2 items-center gap-10 uppercase"
-      initial={{
-        y: -100,
-        opacity: 0,
-      }}
-      animate={{
-        y: 0,
-        opacity: 1,
-      }}
-    >
-      <motion.div
-        className="hidden sm:block"
-        initial={{
-          y: -100,
-          opacity: 0,
-          scale: 0,
-        }}
-        animate={{
-          y: 0,
-          opacity: 1,
-          scale: 1,
-        }}
-        transition={{
-          type: "spring",
-          delay: 0.15,
-          duration: 0.5,
-        }}
-      >
+    <nav className="hidden sm:w-2/3 sm:flex w-50 py-2 items-center gap-10 uppercase">
+      <div className="hidden sm:block">
         <Image width={70} quality={95} height={70} src="/Logo.png" alt="Logo" />
-      </motion.div>
+      </div>
       <ul className="ml-auto flex gap-10 font-semibold">
         {links.map(({ name, hash }) => (
           <li key={name}>
@@ -51,20 +22,12 @@ const NavigationMenu = () => {
               {name}
             </Link>
             {activeSection === name && (
-              <motion.span
-                initial={{
-                  width: 0,
-                }}
-                animate={{
-                  width: "100%",
-                }}
-                className="block bg-gray-500 h-1"
-              ></motion.span>
+              <span className="block bg-gray-500 h-1"></span>
             )}
           </li>
         ))}
       </ul>
-    </motion.nav>
+    </nav>
   );
 };
 

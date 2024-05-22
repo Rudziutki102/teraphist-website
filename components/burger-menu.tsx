@@ -1,9 +1,6 @@
+import { BurgerMenuProps } from "@/lib/types";
 import React from "react";
 
-interface BurgerMenuProps {
-  openNavigation: boolean;
-  onClick: () => void;
-}
 const BurgerMenu = ({ openNavigation, onClick }: BurgerMenuProps) => {
   return (
     <div

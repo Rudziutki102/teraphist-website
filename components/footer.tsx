@@ -5,7 +5,7 @@ import { MdPhone } from "react-icons/md";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className="section relative p-20 bg-color-2">
+    <div id="contact" className="section relative p-20 bg-color-2">
       <div className="flex items-center lg:flex-row flex-col justify-between">
         <div className="flex flex-1 flex-col justify-center lg:items-end lg:mr-10 text-center">
           <h1 className="text-3xl font-semibold mb-5">Skontaktuj się</h1>
