@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <div className="flex flex-wrap">
       <HeroSection />
-      <SkillsSection />
       <PricingList />
+      <SkillsSection />
       <ReviewList />
       <Footer />
     </div>

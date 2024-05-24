@@ -62,67 +62,67 @@ export const skills = [
 
 export const pricingList = [
   {
-    service: "Masaż",
+    category: "Masaż",
+    priceTypes: ["30 '", "60 '"],
     services: [
       {
         name: "relaksacyjny",
-        prices: {
-          half: 70,
-          full: 120,
-        },
+        prices: [
+          { type: "half", amount: 70 },
+          { type: "full", amount: 120 },
+        ],
       },
       {
         name: "klasyczny",
-        prices: {
-          half: 70,
-          full: 120,
-        },
+        prices: [
+          { type: "half", amount: 70 },
+          { type: "full", amount: 120 },
+        ],
       },
       {
         name: "sportowy",
-        prices: {
-          half: 80,
-          full: 130,
-        },
+        prices: [
+          { type: "half", amount: 80 },
+          { type: "full", amount: 130 },
+        ],
       },
       {
         name: "bańką chińska",
-        prices: {
-          half: 80,
-          full: 130,
-        },
+        prices: [
+          { type: "half", amount: 80 },
+          { type: "full", amount: 130 },
+        ],
       },
       {
         name: "świecą",
-        prices: {
-          half: 120,
-          full: 160,
-        },
+        prices: [
+          { type: "half", amount: 120 },
+          { type: "full", amount: 160 },
+        ],
       },
       {
         name: "drenaż limfatyczny",
-        prices: {
-          half: 80,
-          full: 130,
-        },
+        prices: [
+          { type: "half", amount: 80 },
+          { type: "full", amount: 130 },
+        ],
       },
       {
         name: "gorącymi kamieniami",
-        prices: {
-          half: 130,
-          full: 170,
-        },
+        prices: [
+          { type: "half", amount: 130 },
+          { type: "full", amount: 170 },
+        ],
       },
     ],
   },
   {
-    service: "Inne",
+    category: "Inne",
+    priceTypes: false,
     services: [
       {
         name: "kinesiotaping",
-        prices: {
-          stable: 30,
-        },
+        prices: [{ type: "stable", amount: 30 }],
       },
     ],
   },
